@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+env/
+.env
+
+# Angular
+node_modules/
+dist/
+.angular/
+.vscode/
+
+# Database & Storage
+vector_store/
+data/registry.json
+*.log
+
+# Firebase/Keys
+serviceAccountKey.json
+google-services.json
+GoogleService-Info.plist
