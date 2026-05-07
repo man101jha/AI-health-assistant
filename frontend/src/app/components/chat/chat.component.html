@@ -1,0 +1,19 @@
+<div class="chat-container">
+  <div class="chat-window">
+    <div *ngFor="let msg of messages" [ngClass]="{'user-msg': msg.sender === 'user', 'ai-msg': msg.sender === 'ai'}">
+      <div class="bubble">
+        {{ msg.content }}
+        <small>{{ msg.timestamp | date:'shortTime' }}</small>
+      </div>
+    </div>
+    
+    <div *ngIf="isLoading" class="ai-msg">
+      <div class="bubble thinking">The AI is thinking...</div>
+    </div>
+  </div>
+
+  <div class="input-area">
+    <input [(ngModel)]="userInput" (keyup.enter)="sendMessage()" placeholder="Ask a medical question...">
+    <button (click)="sendMessage()" [disabled]="isLoading">Send</button>
+  </div>
+</div>

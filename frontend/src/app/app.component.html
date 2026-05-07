@@ -1,0 +1,26 @@
+<div class="dashboard">
+  <header>
+    <h1>🩺 Healthcare AI Assistant</h1>
+    <app-health></app-health>
+  </header>
+
+  <main>
+    <div class="sidebar">
+      <h3>Admin Panel</h3>
+      <app-upload></app-upload>
+      <p class="hint">Click sync if you have added new documents to the data folder.</p>
+    </div>
+
+    <div class="chat-area">
+      <app-chat></app-chat>
+    </div>
+  </main>
+
+  <!-- Full Page Loading Overlay -->
+  <div *ngIf="loading$ | async" class="full-page-loader">
+    <div class="spinner-container">
+      <div class="main-spinner"></div>
+      <p>Synchronizing Medical Library... Please wait.</p>
+    </div>
+  </div>
+</div>
